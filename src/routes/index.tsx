@@ -1,6 +1,7 @@
 import { A } from "@solidjs/router";
 import { createResource, For } from "solid-js";
 import { Title, useRouteData } from "solid-start";
+import ClientCard from "~/components/ClientCard/ClientCard";
 import Counter from "~/components/Counter";
 
 export function routeData() {
@@ -25,14 +26,11 @@ export default function Home() {
         </a>{" "}
         to learn how to build SolidStart apps.
       </p>
-      <ul>
       <For each ={clients()} fallback={<div>Loading...</div>}>
         {client => 
-        <li>
-          <A href={"/clients/" + client.id}>{client.firstName + client.lastName}</A>
-        </li>}
+        <ClientCard client={client}/>
+        }
       </For>
-      </ul>
 
     </main>
   );
