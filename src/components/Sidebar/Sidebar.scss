@@ -1,0 +1,11 @@
+nav {
+  height: 100%;
+  min-width: 200px;
+  width: 200px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  background: lightblue;
+  z-index: 2;
+}
+

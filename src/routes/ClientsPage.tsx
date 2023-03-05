@@ -3,6 +3,7 @@ import { createResource, For } from "solid-js";
 import { Title, useRouteData } from "solid-start";
 import ClientCard from "~/components/ClientCard/ClientCard";
 import Counter from "~/components/Counter";
+import './ClientsPage.scss'
 
 export function routeData() {
   const [clients] = createResource(async () => {
@@ -26,12 +27,13 @@ export default function Home() {
         </a>{" "}
         to learn how to build SolidStart apps.
       </p>
-      <For each ={clients()} fallback={<div>Loading...</div>}>
-        {client => 
-        <ClientCard client={client}/>
-        }
-      </For>
-
+      <div class="client-card-container">
+        <For each ={clients()} fallback={<div>Loading...</div>}>
+          {client => 
+          <ClientCard client={client}/>
+          }
+        </For>
+      </div>
     </main>
   );
 }
