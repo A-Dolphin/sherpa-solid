@@ -12,7 +12,6 @@ import {
   Scripts,
   Title,
 } from "solid-start";
-import Layout from "./components/Layout/Layout"
 import "./root.scss";
 
 export default function Root() {
@@ -26,13 +25,14 @@ export default function Root() {
       <Body>
         <Suspense>
           <ErrorBoundary>
-            <Layout />
             <Routes>
               <FileRoutes />
             </Routes>
           </ErrorBoundary>
         </Suspense>
-        <Scripts />
+        <Scripts/>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
       </Body>
     </Html>
   );
